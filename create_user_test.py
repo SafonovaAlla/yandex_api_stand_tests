@@ -23,6 +23,8 @@ def positive_assert(first_name):
     assert user_response.status_code == 201
     # Проверяется, что в ответе есть поле authToken и оно не пустое
     assert user_response.json()["authToken"] != ""
+    print("user_response.json()['authToken']: ")
+    print(user_response.json()["authToken"])
 
     # В переменную users_table_response сохраняется результат запроса на получение данных из таблицы user_model
     users_table_response = sender_stand_request.get_users_table()
